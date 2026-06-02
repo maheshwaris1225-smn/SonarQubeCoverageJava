@@ -31,10 +31,10 @@ jobs:
               run: mvn clean install
             - name: Run SonarQube analysis
               run: |
-                mvn sonar:sonar \
-                  -Dsonar.projectKey=sonar-demo-org-may_sonar-demo-may-project \
-                  -Dsonar.host.url=https://sonarcloud.io \
-                  -Dsonar.organization=sonar-demo-org-may \
+                mvn sonar:sonar 
+                  -Dsonar.projectKey=sonar-demo-org-may_sonar-demo-may-project 
+                  -Dsonar.host.url=https://sonarcloud.io 
+                  -Dsonar.organization=sonar-demo-org-may 
                   -Dsonar.token=${{ secrets.SONAR_TOKEN }}
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
